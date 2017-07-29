@@ -99,7 +99,7 @@ Public Sub AddRecord(values() As String)
         i = i + 1
     Loop
     If StrComp(vWorksheet.Cells(i, FirstColumn), values(1), vbTextCompare) = 0 Then
-        Err.Raise 10000, "LIB_Records", "Object already exists."
+        Err.Raise 10002, "LIB_Records", "Object already exists."
     End If
     
     PushRecordInConcreteLine rec, i
@@ -134,7 +134,7 @@ Public Sub RemoveRecord(name As String)
         i = i + 1
     Loop
     
-    Err.Raise 10000, "LIB_Records", "Record does not exist."
+    Err.Raise 10003, "LIB_Records", "Record does not exist."
 
 End Sub
 
@@ -164,7 +164,7 @@ Public Sub LostObjectAlert(name As String, column As Long)
 
 End Sub
 
-Public Function GetRowIndexOf(name As String, column As Long)
+Public Function GetRowIndexOf(name As String, column As Long) As Long
     
     Dim i As Long
     i = FirstDataRow
@@ -177,7 +177,7 @@ Public Function GetRowIndexOf(name As String, column As Long)
         i = i + 1
     Loop
     
-    Err.Raise 10000, "CM_RecordTsble.GetRowIndexOf", "There is no such a record!"
+    Err.Raise 10003, "CM_RecordTable.GetRowIndexOf", "There is no such a record!"
     
 End Function
 
@@ -220,4 +220,22 @@ Public Sub CopyTo(copyTable As CM_RecordTable)
         row = row + 1
     Loop
         
+End Sub
+
+Public Function GetCellValueOf(id As String, column As Integer) As String
+
+    Dim ind As Long
+    ind = GetRowIndexOf(id, vFirstColumn)
+
+    GetCellValueOf = vWorksheet.Cells(ind, column)
+
+End Function
+
+Public Sub SetCellValueOf(id As String, column As Integer, value As String)
+
+    Dim ind As Long
+    ind = GetRowIndexOf(id, vFirstColumn)
+    
+    vWorksheet.Cells(ind, column) = value
+    
 End Sub

@@ -52,6 +52,12 @@ Sub MOD_Reporter_SendReport()
 
     On Error GoTo ErrHandler
 
+    If WS_Reporter.Range(WS_Reporter_statusCell) = "Reported" Then
+    
+        Err.Raise 10000, "MOD_Reporter_SendReport", "Already reported!"
+    
+    End If
+
     Dim reporterTable As CM_RecordTable
     Dim reportTable As CM_RecordTable
     
@@ -63,8 +69,12 @@ Sub MOD_Reporter_SendReport()
 
     reporterTable.CopyTo reportTable
     
-    WS_Reporter.Range(WS_Reporter_statusCell) = "Reported"
-    WS_Planner.Range(WS_Planner_statusCell) = "Reported"
+    If WS_Reporter.Range(WS_Reporter_statusCell) = "Current" Then
+    
+        WS_Reporter.Range(WS_Reporter_statusCell) = "Reported"
+        WS_Planner.Range(WS_Planner_statusCell) = "Reported"
+        
+    End If
     
     WS_Reporter.CBT_ChangeInformation.Visible = False
     
