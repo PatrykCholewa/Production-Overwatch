@@ -15,5 +15,6 @@ Option Explicit
 Private Sub Workbook_Activate()
 
     LIB_ErrHandler.ProtectEverything
+    
 
 End Sub

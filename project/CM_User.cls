@@ -49,12 +49,22 @@ End Property
 
 Public Function Authorize(pass As String) As Boolean
 
+    On Error GoTo ErrHandler
+
     If LIB_Security.Encrypt(pass, passKey) = PassHash Then
         Authorize = True
     Else
         Authorize = False
     End If
     
+    Exit Function
+    
+ErrHandler:
+    If Err.number = 10003 Then
+        Err.Raise 10004, "CM_User.Authorize", "User does not exists!"
+    Else
+        LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
+    End If
 End Function
 
 Public Sub Constructor(username As String)
