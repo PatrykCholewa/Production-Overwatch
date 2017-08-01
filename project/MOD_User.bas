@@ -47,3 +47,8 @@ ErrHandler:
     LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
 
 End Sub
+
+Sub MOD_User_HideWS()
+
+    WS_User.Visible = xlSheetHidden
+End Sub

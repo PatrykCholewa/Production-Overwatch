@@ -95,3 +95,10 @@ Sub MOD_Reporter_ChangeInformation()
 ErrHandler:
     LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
 End Sub
+
+Sub MOD_Reporter_HideWS()
+
+    WS_Reporter.Visible = xlSheetHidden
+    WS_Report.Visible = xlSheetHidden
+
+End Sub

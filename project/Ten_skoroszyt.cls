@@ -14,7 +14,9 @@ Option Explicit
 
 Private Sub Workbook_Activate()
 
-    LIB_ErrHandler.ProtectEverything
-    
+    DEV_Tools.DEV_ProtectEverything
+    DEV_Tools.DEV_HideEverything
+    WS_Start.Activate
+    MOD_Start.MOD_Start_Logout
 
 End Sub

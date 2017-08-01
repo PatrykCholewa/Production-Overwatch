@@ -189,3 +189,11 @@ ErrHandler:
     LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
 
 End Sub
+
+Sub MOD_Planner_HideWS()
+
+    WS_Planner.Visible = xlSheetHidden
+    WS_Plan.Visible = xlSheetHidden
+    WS_Report.Visible = xlSheetHidden
+
+End Sub

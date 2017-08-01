@@ -19,12 +19,3 @@ Sub Handle(number As Integer, source As String, description As String, helpFile 
                 vbCritical, "Error"
     End Select
 End Sub
-
-
-Sub ProtectEverything()
-    WS_Objects.Protect UserInterfaceOnly:=True
-    WS_Plan.Protect UserInterfaceOnly:=True
-    WS_Planner.Protect UserInterfaceOnly:=True
-    WS_Report.Protect UserInterfaceOnly:=True
-    WS_Reporter.Protect UserInterfaceOnly:=True
-End Sub

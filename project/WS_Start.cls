@@ -10,15 +10,13 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Attribute VB_TemplateDerived = False
 Attribute VB_Customizable = True
-Attribute VB_Control = "CBT_Login, 2, 0, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Logout, 3, 1, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Objects, 4, 2, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Planner, 5, 3, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Plan, 6, 4, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Users, 7, 5, MSForms, CommandButton"
-Attribute VB_Control = "CBT_PassChange, 8, 6, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Reporter, 9, 7, MSForms, CommandButton"
-Attribute VB_Control = "CBT_NewReport, 10, 8, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Reporter, 9, 2, MSForms, CommandButton"
+Attribute VB_Control = "CBT_PassChange, 8, 3, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Users, 7, 4, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Planner, 5, 5, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Objects, 4, 6, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Logout, 3, 7, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Login, 2, 8, MSForms, CommandButton"
 Option Explicit
 
 Private Sub CBT_Logout_Click()
@@ -27,12 +25,33 @@ Private Sub CBT_Logout_Click()
 
 End Sub
 
-Private Sub CBT_PassChange_Click()
+Private Sub CBT_Objects_Click()
 
+    MOD_Start.MOD_Start_WSObjects
+
+End Sub
+
+Private Sub CBT_PassChange_Click()
+    MOD_Start.MOD_Start_ChangePass
 End Sub
 
 Private Sub CBT_Login_Click()
 
     MOD_Start.MOD_Start_Login
 
+End Sub
+
+Private Sub CBT_Planner_Click()
+    MOD_Start.MOD_Start_WSPlanner
+    MOD_Start.MOD_Start_WSPlan
+    MOD_Start.MOD_Start_WSReport
+End Sub
+
+
+Private Sub CBT_Reporter_Click()
+    MOD_Start.MOD_Start_WSReporter
+End Sub
+
+Private Sub CBT_Users_Click()
+    MOD_Start.MOD_Start_WSUser
 End Sub
