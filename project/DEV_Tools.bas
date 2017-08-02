@@ -3,6 +3,7 @@ Option Explicit
 
 
 Sub DEV_ProtectEverything()
+    WS_Archives.Protect UserInterfaceOnly:=True
     WS_Objects.Protect UserInterfaceOnly:=True
     WS_Plan.Protect UserInterfaceOnly:=True
     WS_Planner.Protect UserInterfaceOnly:=True
@@ -14,6 +15,7 @@ Sub DEV_ProtectEverything()
 End Sub
 
 Sub DEV_HideEverything()
+    WS_Archives.Visible = xlSheetVeryHidden
     WS_Objects.Visible = xlSheetVeryHidden
     WS_Plan.Visible = xlSheetVeryHidden
     WS_Planner.Visible = xlSheetVeryHidden
@@ -25,6 +27,7 @@ Sub DEV_HideEverything()
 End Sub
 
 Sub DEV_UnprotectEverything()
+    WS_Archives.Unprotect
     WS_Objects.Unprotect
     WS_Plan.Unprotect
     WS_Planner.Unprotect

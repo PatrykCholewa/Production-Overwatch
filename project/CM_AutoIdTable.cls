@@ -15,6 +15,10 @@ Option Explicit
 Private vTable As CM_RecordTable
 Private vMaxId As Long
 
+Public Property Get LastDataRow() As Long
+    LastDataRow = vTable.LastDataRow
+End Property
+
 Public Property Get RecordTable() As CM_RecordTable
     Set RecordTable = vTable
 End Property
@@ -86,7 +90,7 @@ End Sub
 
 Public Sub LostObjectAlert(name As String, column As Long, ws As Worksheet)
 
-    vTable.LostObjectAlert name, column, ws
+    vTable.LostObjectAlert name, column
 
 End Sub
 
@@ -102,6 +106,17 @@ Public Sub CopyTo(copyTable As CM_AutoIdTable, copyMaxIdCell As String)
     Set copyWs = copyTable.Worksheet
     
     vTable.CopyTo copyTable.RecordTable
+    
+    copyWs.Range(copyMaxIdCell) = vMaxId
+    
+End Sub
+
+Public Sub CopyToIfColumnCellNotEmpty(copyTable As CM_AutoIdTable, copyMaxIdCell As String, ifColumn As Long)
+
+    Dim copyWs As Worksheet
+    Set copyWs = copyTable.Worksheet
+    
+    vTable.CopyToIfColumnCellNotEmpty copyTable.RecordTable, ifColumn
     
     copyWs.Range(copyMaxIdCell) = vMaxId
     

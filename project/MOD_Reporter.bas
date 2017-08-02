@@ -76,6 +76,8 @@ Sub MOD_Reporter_SendReport()
         
     End If
     
+    MOD_Archives.MOD_Archives_AddReport
+    
     WS_Reporter.CBT_ChangeInformation.Visible = False
     
     Exit Sub

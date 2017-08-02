@@ -8,12 +8,12 @@ Sub Handle(number As Integer, source As String, description As String, helpFile 
         Case Is >= 10002
             MsgBox description, vbExclamation, "Warning!"
         Case 10001
-            ProtectEverything
+            DEV_Tools.DEV_ProtectEverything
             MsgBox "Critical Error!" & vbNewLine & _
                 "Contact developer for help!", _
                 vbCritical, "Error"
         Case Else
-            ProtectEverything
+            DEV_Tools.DEV_ProtectEverything
             MsgBox "Critical Error!" & vbNewLine & _
                 "Contact developer for help!", _
                 vbCritical, "Error"

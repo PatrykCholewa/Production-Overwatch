@@ -26,18 +26,6 @@ Const materialNameColumn As Long = 5
 Const numberOfProductColumns As Long = 3
 
 
-Private Sub CBX_Kit_Change()
-
-End Sub
-
-Private Sub UserForm_Deactivate()
-
-End Sub
-
-Private Sub UserForm_Initialize()
-
-End Sub
-
 Private Sub UserForm_Activate()
 
     Dim row As Long
@@ -84,9 +72,5 @@ Private Sub CBT_AddProduct_Click()
     
 ErrHandler:
     LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
-
-End Sub
-
-Private Sub UserForm_Click()
 
 End Sub

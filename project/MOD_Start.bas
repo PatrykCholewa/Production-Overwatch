@@ -7,6 +7,7 @@ Const functionCell As String = "H2"
 Sub MOD_Start_Logout()
 
     With WS_Start
+        .CBT_Archives.Visible = False
         .CBT_LogIn.Visible = True
         .CBT_Logout.Visible = False
         .CBT_Objects.Visible = False
@@ -65,9 +66,15 @@ Sub MOD_Start_ChangePass()
 
 End Sub
 
+Sub MOD_Start_WSArchives()
+    WS_Archives.Visible = xlSheetVisible
+    WS_Archives.Activate
+End Sub
+
 Sub MOD_Start_Admin()
 
     With WS_Start
+        .CBT_Archives.Visible = True
         .CBT_LogIn.Visible = False
         .CBT_Logout.Visible = True
         .CBT_Objects.Visible = True
@@ -82,6 +89,7 @@ End Sub
 Sub MOD_Start_Worker()
 
     With WS_Start
+        .CBT_Archives.Visible = False
         .CBT_LogIn.Visible = False
         .CBT_Logout.Visible = True
         .CBT_Objects.Visible = False
@@ -96,6 +104,7 @@ End Sub
 Sub MOD_Start_Manager()
 
     With WS_Start
+        .CBT_Archives.Visible = True
         .CBT_LogIn.Visible = False
         .CBT_Logout.Visible = True
         .CBT_Objects.Visible = False

@@ -72,22 +72,6 @@ Private Sub CBX_RProduct_Change()
 
 End Sub
 
-Private Sub TBX_Quantity_Change()
-
-End Sub
-
-Private Sub TBX_Time_Change()
-
-End Sub
-
-Private Sub UserForm_Deactivate()
-
-End Sub
-
-Private Sub UserForm_Initialize()
-
-End Sub
-
 Private Sub UserForm_Activate()
 
     Dim row As Long
@@ -113,8 +97,4 @@ Private Sub UserForm_Activate()
         row = row + 1
     Loop
  
-End Sub
-
-Private Sub UserForm_Click()
-
 End Sub

@@ -34,18 +34,6 @@ Const WS_Planner_maxIdRow As Long = 2
 Const WS_Planner_maxIdColumn As Long = 5
 Const WS_Planner_statusCell As String = "E1"
 
-Private Sub CBX_Product_Change()
-
-End Sub
-
-Private Sub UserForm_Deactivate()
-
-End Sub
-
-Private Sub UserForm_Initialize()
-
-End Sub
-
 Private Sub UserForm_Activate()
 
     Dim row As Long
@@ -104,8 +92,4 @@ Private Sub CBT_AddRecord_Click()
     
 ErrHandler:
     LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
-End Sub
-
-Private Sub UserForm_Click()
-
 End Sub

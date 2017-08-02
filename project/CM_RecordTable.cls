@@ -33,6 +33,23 @@ Public Property Get FirstDataRow() As Long
     FirstDataRow = vFirstDataRow
 End Property
 
+Public Property Get LastDataRow() As Long
+
+    Dim row As Long
+    row = vFirstDataRow
+    
+    If vWorksheet.Cells(row, vFirstColumn) = "" Then
+        Err.Raise 10005, "CM_ReocrdTable.<Get>LastDataRow", "There is no data!"
+    End If
+    
+    Do While vWorksheet.Cells(row, vFirstColumn) <> ""
+        row = row + 1
+    Loop
+    
+    LastDataRow = row - 1
+    
+End Property
+
 Public Property Let Worksheet(ws As Worksheet)
     vWorksheet = ws
 End Property
@@ -198,6 +215,12 @@ End Sub
 
 Public Sub CopyTo(copyTable As CM_RecordTable)
 
+    CopyToIfColumnCellNotEmpty copyTable, vFirstColumn
+        
+End Sub
+
+Public Sub CopyToIfColumnCellNotEmpty(copyTable As CM_RecordTable, ifColumn As Long)
+
     Dim row As Long
     Dim column As Long
     Dim columnDiff As Long
@@ -215,7 +238,11 @@ Public Sub CopyTo(copyTable As CM_RecordTable)
     
     Do While vWorksheet.Cells(row, vFirstColumn) <> ""
         For column = vFirstColumn To vFirstColumn + vNumberOfColumns - 1
-            copyWs.Cells(row + rowDiff, column + columnDiff) = vWorksheet.Cells(row, column)
+            If vWorksheet.Cells(row, ifColumn) <> "" Then
+                copyWs.Cells(row + rowDiff, column + columnDiff) = vWorksheet.Cells(row, column)
+            Else
+                rowDiff = rowDiff - 1
+            End If
         Next column
         row = row + 1
     Loop

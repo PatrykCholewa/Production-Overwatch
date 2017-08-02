@@ -48,24 +48,18 @@ Private Sub CBT_Login_Click()
             Err.Raise 10001, "UF_LogIn.CBT_LogIn_Click()", "Unknown user function!"
     End Select
     
+    Unload Me
+    
     Exit Sub
     
 ErrHandler:
     LIB_ErrHandler.Handle Err.number, Err.source, Err.description, Err.helpFile, Err.helpContext
 End Sub
 
-Private Sub UserForm_Deactivate()
-
-End Sub
-
-Private Sub UserForm_Initialize()
-
-End Sub
-
-Private Sub UserForm_Activate()
- 
-End Sub
-
 Private Sub UserForm_Click()
+
+End Sub
+
+Private Sub UserForm_Deactivate()
 
 End Sub

@@ -90,24 +90,12 @@ Private Sub TBX_Function_Change()
 
 End Sub
 
-Private Sub UserForm_Deactivate()
-
-End Sub
-
-Private Sub UserForm_Initialize()
-
-End Sub
-
 Private Sub UserForm_Activate()
  
     Me.CBX_Function.AddItem "Worker"
     Me.CBX_Function.AddItem "Manager"
     Me.CBX_Function.AddItem "Admin"
  
-End Sub
-
-Private Sub UserForm_Click()
-
 End Sub
 
 Public Sub CreateUser()

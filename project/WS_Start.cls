@@ -10,14 +10,21 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Attribute VB_TemplateDerived = False
 Attribute VB_Customizable = True
-Attribute VB_Control = "CBT_Reporter, 9, 2, MSForms, CommandButton"
-Attribute VB_Control = "CBT_PassChange, 8, 3, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Users, 7, 4, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Planner, 5, 5, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Objects, 4, 6, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Logout, 3, 7, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Login, 2, 8, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Reporter, 9, 1, MSForms, CommandButton"
+Attribute VB_Control = "CBT_PassChange, 8, 2, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Users, 7, 3, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Planner, 5, 4, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Objects, 4, 5, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Logout, 3, 6, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Login, 2, 7, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Archives, 11, 8, MSForms, CommandButton"
 Option Explicit
+
+Private Sub CBT_Archives_Click()
+
+    MOD_Start.MOD_Start_WSArchives
+
+End Sub
 
 Private Sub CBT_Logout_Click()
 
