@@ -10,14 +10,16 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = True
 Attribute VB_TemplateDerived = False
 Attribute VB_Customizable = True
-Attribute VB_Control = "CBT_Reporter, 9, 1, MSForms, CommandButton"
-Attribute VB_Control = "CBT_PassChange, 8, 2, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Users, 7, 3, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Planner, 5, 4, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Objects, 4, 5, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Logout, 3, 6, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Login, 2, 7, MSForms, CommandButton"
-Attribute VB_Control = "CBT_Archives, 11, 8, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Archives, 11, 1, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Login, 2, 2, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Logout, 3, 3, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Objects, 4, 4, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Planner, 5, 5, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Users, 7, 6, MSForms, CommandButton"
+Attribute VB_Control = "CBT_PassChange, 8, 7, MSForms, CommandButton"
+Attribute VB_Control = "CBT_Reporter, 9, 8, MSForms, CommandButton"
+Attribute VB_Control = "CBT_ProdCharter, 13, 9, MSForms, CommandButton"
+Attribute VB_Control = "CBT_HideProdCharter, 15, 11, MSForms, CommandButton"
 Option Explicit
 
 Private Sub CBT_Archives_Click()
@@ -25,6 +27,14 @@ Private Sub CBT_Archives_Click()
     MOD_Start.MOD_Start_WSArchives
 
 End Sub
+
+Private Sub CBT_HideProdCharter_Click()
+
+    MOD_Start.MOD_Start_HideProdCharter
+
+End Sub
+
+
 
 Private Sub CBT_Logout_Click()
 
@@ -54,6 +64,12 @@ Private Sub CBT_Planner_Click()
     MOD_Start.MOD_Start_WSReport
 End Sub
 
+
+Private Sub CBT_ProdCharter_Click()
+
+    MOD_Start.MOD_Start_ProdCharter
+
+End Sub
 
 Private Sub CBT_Reporter_Click()
     MOD_Start.MOD_Start_WSReporter

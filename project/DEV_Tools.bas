@@ -1,7 +1,6 @@
 Attribute VB_Name = "DEV_Tools"
 Option Explicit
 
-
 Sub DEV_ProtectEverything()
     WS_Archives.Protect UserInterfaceOnly:=True
     WS_Objects.Protect UserInterfaceOnly:=True
@@ -15,6 +14,7 @@ Sub DEV_ProtectEverything()
 End Sub
 
 Sub DEV_HideEverything()
+    CHT_Production.Visible = xlSheetVeryHidden
     WS_Archives.Visible = xlSheetVeryHidden
     WS_Objects.Visible = xlSheetVeryHidden
     WS_Plan.Visible = xlSheetVeryHidden

@@ -15,6 +15,8 @@ Sub MOD_Start_Logout()
         .CBT_Planner.Visible = False
         .CBT_Reporter.Visible = False
         .CBT_Users.Visible = False
+        .CBT_ProdCharter.Visible = False
+        .CBT_HideProdCharter.Visible = False
         
         .Range(loginCell) = ""
         .Range(functionCell) = ""
@@ -71,6 +73,32 @@ Sub MOD_Start_WSArchives()
     WS_Archives.Activate
 End Sub
 
+Sub MOD_Start_ProdCharter()
+
+    CHT_Production.Visible = xlSheetVisible
+
+    With WS_Start
+        .CBT_HideProdCharter.Visible = True
+        .CBT_ProdCharter.Visible = False
+    End With
+    
+    UF_ProdChart.Show
+    
+End Sub
+
+Sub MOD_Start_HideProdCharter()
+
+    CHT_Production.Visible = xlSheetHidden
+
+    With WS_Start
+        .CBT_HideProdCharter.Visible = False
+        .CBT_ProdCharter.Visible = True
+    End With
+    
+    UF_ProdChart.Hide
+
+End Sub
+
 Sub MOD_Start_Admin()
 
     With WS_Start
@@ -82,6 +110,8 @@ Sub MOD_Start_Admin()
         .CBT_Planner.Visible = True
         .CBT_Reporter.Visible = True
         .CBT_Users.Visible = True
+        .CBT_HideProdCharter.Visible = False
+        .CBT_ProdCharter.Visible = True
     End With
 
 End Sub
@@ -97,6 +127,8 @@ Sub MOD_Start_Worker()
         .CBT_Planner.Visible = False
         .CBT_Reporter.Visible = True
         .CBT_Users.Visible = False
+        .CBT_HideProdCharter.Visible = False
+        .CBT_ProdCharter.Visible = False
     End With
 
 End Sub
@@ -112,6 +144,8 @@ Sub MOD_Start_Manager()
         .CBT_Planner.Visible = True
         .CBT_Reporter.Visible = False
         .CBT_Users.Visible = False
+        .CBT_HideProdCharter.Visible = False
+        .CBT_ProdCharter.Visible = True
     End With
 
 End Sub
